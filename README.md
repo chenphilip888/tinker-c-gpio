@@ -82,6 +82,7 @@ These tests used Seeed Grove  starter kit LED, button, buzzer, Grove-LCD RGB Bac
 1. uart test.
    This test will send uart3 tx to uart3 rx for loopback.
    It sends 0 to 255 to uart3 tx and receive 0 to 255 from uart3 rx.
+   Connect gpio pin 36 to gpio pin 37.
 2. led test.
    This test will blink led 5 times. 
    Connect gpio pin 11 to led control. 
