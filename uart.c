@@ -51,26 +51,19 @@ int uart_test ()
     return 1 ;
   }
 
-  nextTime = millis () + 200 ;
-
   for (count = 0 ; count < 256 ; )
   {
-    if (millis () > nextTime)
-    {
-      printf ("\nOut: %3d: ", count) ;
       fflush (stdout) ;
       serialPutchar (fd, count) ;
-      nextTime += 200 ;
+      delay ( 50 ) ;
+      while (serialDataAvail (fd))
+      {
+          printf (" -> %3d\r\n", serialGetchar (fd)) ;
+          fflush (stdout) ;
+      }
       ++count ;
-    }
 
-    delay (3) ;
-
-    while (serialDataAvail (fd))
-    {
-      printf (" -> %3d", serialGetchar (fd)) ;
-      fflush (stdout) ;
-    }
+      delay ( 50 ) ;
   }
 
   printf ("\n") ;
