@@ -69,7 +69,7 @@ gcc serialTest.c -o serialTest -lwiringPi
 ./serialTest
 cd ~/tinker-c-gpio
 make test
-./test
+sudo ./test
 When done all tests, hit 'q' to exit tests.
 sudo shutdown -h now
 Power off the ASUS Tinkerboard.
